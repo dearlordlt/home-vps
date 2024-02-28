@@ -1,7 +1,9 @@
 import React from 'react';
+import { Metadata } from 'next';
+
+import TopNav from '../components/TopNav';
 
 import './globals.css';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Erah',
@@ -15,8 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <body>{children}</body>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body>
+        <TopNav />
+        <main>{children}</main>
+      </body>
     </html>
   )
 }
